@@ -22,9 +22,7 @@
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:'Poppins',sans-serif;overflow-x:hidden;background:#fff;color:#222}
 
-    /* ==========================
-       CHECKERED / GINGHAM BG
-       ========================== */
+    /* CHECKERED / GINGHAM BG */
     .gingham{
       background-image:
               linear-gradient(90deg, transparent 49%, rgba(230, 210, 215, 0.28) 49%, rgba(230, 210, 215, 0.28) 51%, transparent 51%),
@@ -35,366 +33,386 @@
       background-color:var(--cream);
     }
 
-    /* ==========================
-       HEADER (KEEP SAME)
-       ========================== */
-    .header-wrapper{
-      position:relative;
-      padding-bottom:0;
-    }
-    .top-wave{
-      position:absolute;top:0;left:0;width:100%;height:25px;overflow:hidden;z-index:10;
-    }
+    /* HEADER */
+    .header-wrapper{position:relative;padding-bottom:0}
+    .top-wave{position:absolute;top:0;left:0;width:100%;height:25px;overflow:hidden;z-index:10}
     .top-wave svg{width:100%;height:100%;display:block}
-    header{
-      position:relative;
-      padding:40px 60px 30px;
-      z-index:5;
-    }
-    .header-top{
-      display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;
-    }
+    header{position:relative;padding:40px 60px 30px;z-index:5}
+    .header-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
     .logo{
-      font-family:'Tangerine',cursive;
-      font-size:72px;
-      font-weight:700;
-      color:#c17d3a;
-      letter-spacing:2px;
-      text-shadow:2px 2px 4px rgba(0,0,0,0.1);
-      animation:fadeInDown 1s ease;
-      user-select:none;
+      font-family:'Tangerine',cursive;font-size:72px;font-weight:700;color:#c17d3a;
+      letter-spacing:2px;text-shadow:2px 2px 4px rgba(0,0,0,0.1);animation:fadeInDown 1s ease;user-select:none;
     }
     .header-actions{display:flex;align-items:center;gap:30px}
     .icon-btn{background:none;border:none;cursor:pointer;padding:8px;transition:all .3s ease}
     .icon-btn:hover{transform:scale(1.1) rotate(5deg)}
     .cart-icon,.search-icon{width:24px;height:24px;fill:var(--pink)}
-    nav{
-      display:flex;justify-content:space-between;align-items:center;
-      max-width:1400px;margin:0 auto;
-      animation:fadeInUp 1s ease .2s both;
-    }
-    .nav-menu{
-      display:flex;list-style:none;gap:80px;width:100%;
-      justify-content:space-between;
-    }
+    nav{display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto;animation:fadeInUp 1s ease .2s both}
+    .nav-menu{display:flex;list-style:none;gap:80px;width:100%;justify-content:space-between}
     .nav-menu li{position:relative}
     .nav-menu a{
-      text-decoration:none;color:var(--pink);
-      font-weight:600;font-size:15px;
-      text-transform:uppercase;letter-spacing:1.5px;
-      transition:all .3s ease;position:relative;padding-bottom:5px;
+      text-decoration:none;color:var(--pink);font-weight:600;font-size:15px;
+      text-transform:uppercase;letter-spacing:1.5px;transition:all .3s ease;position:relative;padding-bottom:5px;
     }
     .nav-menu a:hover{color:var(--pink2);transform:translateY(-2px)}
     .nav-menu a::after{
-      content:'';position:absolute;bottom:0;left:0;width:0;height:3px;
-      background:var(--mint);transition:width .3s ease;
+      content:'';position:absolute;bottom:0;left:0;width:0;height:3px;background:var(--mint);transition:width .3s ease;
     }
     .nav-menu a:hover::after,.nav-menu a.active::after{width:100%}
     .nav-menu a.active{border-bottom:3px solid var(--mint)}
-    .bottom-wave{
-      position:relative;width:100%;height:25px;margin-top:-1px;overflow:hidden;
-    }
+    .bottom-wave{position:relative;width:100%;height:25px;margin-top:-1px;overflow:hidden}
     .bottom-wave svg{width:100%;height:100%;display:block}
 
-    /* ==========================
-       HERO (MATCH IMAGE)
-       ========================== */
-    .hero-wrap{
-      position:relative;
-      background:
-              radial-gradient(1300px 600px at 10% 40%, rgba(255,255,255,.50), rgba(255,255,255,0) 55%),
-              linear-gradient(180deg, #a9f0ee 0%, #8ce7e6 35%, #6fd9d7 70%, #60d2cf 100%);
-      border-top: 0;
-      border-bottom:0;
-      overflow:hidden;
-    }
-
-    /* Scalloped pink trim (top/bottom like the screenshot) */
+    /* HERO */
+    /*.hero-wrap{*/
+    /*  position:relative;*/
+    /*  background:radial-gradient(1300px 600px at 10% 40%, rgba(255,255,255,.50), rgba(255,255,255,0) 55%),*/
+    /*  linear-gradient(180deg, #a9f0ee 0%, #8ce7e6 35%, #6fd9d7 70%, #60d2cf 100%);*/
+    /*  overflow:hidden;*/
+    /*}*/
     .scallop{
       position:absolute;left:0;width:100%;height:22px;z-index:6;pointer-events:none;
-      background:
-              radial-gradient(circle at 11px 11px, var(--pink) 11px, transparent 12px) 0 0/22px 22px repeat-x;
+      background:radial-gradient(circle at 11px 11px, var(--pink) 11px, transparent 12px) 0 0/22px 22px repeat-x;
       filter: drop-shadow(0 2px 0 rgba(0,0,0,.06));
     }
     .scallop.top{top:0;transform:translateY(-1px)}
     .scallop.bottom{bottom:0;transform:translateY(1px) rotate(180deg)}
-
-    /* Inner soft “glass” arc on the left */
     .hero-wrap::before{
-      content:"";
-      position:absolute;
-      left:-220px;top:-140px;
-      width:760px;height:760px;
-      border-radius:50%;
+      content:"";position:absolute;left:-220px;top:-140px;width:760px;height:760px;border-radius:50%;
       background: radial-gradient(circle at 35% 35%, rgba(255,255,255,.55), rgba(255,255,255,.16) 55%, rgba(255,255,255,0) 72%);
-      box-shadow: inset 0 0 0 2px rgba(255,255,255,.25);
-      opacity:.95;
-      z-index:1;
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,.25);opacity:.95;z-index:1;
     }
-
-    /* Sparkle burst top-right */
     .spark{
-      position:absolute;right:90px;top:60px;z-index:3;
-      width:170px;height:170px;opacity:.92;
+      position:absolute;right:90px;top:60px;z-index:3;width:170px;height:170px;opacity:.92;
       filter: drop-shadow(0 14px 20px rgba(0,0,0,.10));
     }
-
     .hero{
-      position:relative;
-      z-index:5;
-      max-width:1200px;
-      margin:0 auto;
-      padding:70px 60px 55px;
-      display:grid;
-      grid-template-columns: 1.2fr .9fr;
-      gap:40px;
-      align-items:center;
+      position:relative;z-index:5;max-width:1200px;margin:0 auto;padding:70px 60px 55px;
+      display:grid;grid-template-columns: 1.2fr .9fr;gap:40px;align-items:center;
     }
-
     .brand-script{
-      font-family:'Tangerine',cursive;
-      font-size:34px;
-      color:#c17d3a;
-      letter-spacing:1px;
-      margin-bottom:10px;
-      transform: translateY(2px);
+      font-family:'Tangerine',cursive;font-size:34px;color:#c17d3a;letter-spacing:1px;
+      margin-bottom:10px;transform: translateY(2px);
     }
-
     .hero-title{
-      font-family: "Poppins", sans-serif;
-      font-weight: 800;
-      letter-spacing: .2px;
-      line-height: 1.02;
-      font-size: clamp(2.3rem, 3.6vw, 4.1rem);
-      color: rgb(193, 125, 58);
-      text-shadow: 0 6px 18px rgba(0,0,0,.12);
+      font-family: "Poppins", sans-serif;font-weight: 800;letter-spacing: .2px;line-height: 1.02;
+      font-size: clamp(2.3rem, 6.0vw, 4.1rem);color: rgb(193, 125, 58);text-shadow: 0 6px 18px rgba(0,0,0,.12);
     }
     .hero-title .pink{color: var(--pink); text-shadow:none}
     .hero-cta{margin-top:24px}
-
     .btn-order{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px 38px;
-      border-radius: 6px;
-      border: 0;
-      background: var(--pink);
-      color: rgba(255,255,255,.92);
-      font-weight: 700;
-      font-size: 18px;
-      letter-spacing:.4px;
-      cursor:pointer;
-      box-shadow: 0 10px 0 rgba(0,0,0,.08), 0 22px 35px rgba(0,0,0,.14);
-      transform: translateY(0);
-      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+      display:inline-flex;align-items:center;justify-content:center;padding:12px 38px;border-radius: 10px;
+      border: 0;background: var(--pink);color: rgba(255,255,255,.92);font-weight: 700;font-size: 18px;
+      letter-spacing:.4px;cursor:pointer;box-shadow: 0 10px 0 rgba(0,0,0,.08), 0 22px 35px rgba(0,0,0,.14);
+      transform: translateY(0);transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
     }
     .btn-order:hover{
-      background: var(--pink2);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 0 rgba(0,0,0,.07), 0 26px 45px rgba(0,0,0,.16);
+      background: var(--pink2);transform: translateY(-2px);box-shadow: 0 8px 0 rgba(0,0,0,.07), 0 26px 45px rgba(0,0,0,.16);
     }
-
-    /* ==========================
-       RIGHT SIDE IMAGE CONTAINER
-       (UPDATED: uses coffee.png)
-       ========================== */
     .cupcake-card{
-      position:relative;
-      width:min(360px, 100%);
-      margin-left:auto;
-      display:flex;
-      align-items:flex-end;
-      justify-content:flex-end;
+      position:relative;width:min(300px, 100%);margin-left:auto;display:flex;align-items:flex-end;justify-content:flex-end;
     }
 
+    /* ✅ HERO RIBBON REMOVED (commented out in HTML) */
     .ribbon{
-      position:absolute;
-      bottom:20px;right:-10px;
-      width:260px;height:60px;
-      opacity:.75;
-      transform: rotate(3deg);
-      filter: drop-shadow(0 18px 20px rgba(0,0,0,.12));
-      pointer-events:none;
+      position:absolute;bottom:20px;right:-10px;width:260px;height:60px;opacity:.75;
+      transform: rotate(3deg);filter: drop-shadow(0 18px 20px rgba(0,0,0,.12));pointer-events:none;
     }
 
-    /* NEW: Coffee PNG styling */
     .coffee-image{
-      width: min(320px, 100%);
-      height: auto;
-      object-fit: contain;
-      filter: drop-shadow(0 26px 30px rgba(0,0,0,.18));
-      transform: translateY(6px);
-      transition: transform .3s ease;
-      user-select:none;
-      -webkit-user-drag:none;
+      width: min(320px, 100%);height: auto;object-fit: contain;filter: drop-shadow(0 26px 30px rgba(0,0,0,.18));
+      transform: translateY(6px);transition: transform .3s ease;user-select:none;-webkit-user-drag:none;
     }
-    .coffee-image:hover{
-      transform: translateY(0px) scale(1.03);
-    }
+    .coffee-image:hover{transform: translateY(0px) scale(1.03)}
 
-    /* ==========================
-       PRODUCTS SECTION
-       ========================== */
-    .products-wrap{
-      position:relative;
-      padding:48px 0 58px;
-    }
-
-    /* white “film strip” top border like screenshot */
+    /* SPECIALTY SECTION */
+    .products-wrap{position:relative;padding:48px 0 58px}
     .film-strip{
       position:absolute;left:0;top:0;width:100%;height:22px;z-index:3;
-      background:
-              linear-gradient(#fff,#fff) 0 0/100% 100% no-repeat;
-      box-shadow: 0 4px 0 rgba(0,0,0,.05);
+      background:linear-gradient(#fff,#fff) 0 0/100% 100% no-repeat;box-shadow: 0 4px 0 rgba(0,0,0,.05);
     }
-    .film-strip::after{
-      content:"";
-      position:absolute;left:0;top:0;width:100%;height:100%;
-      background:
-              repeating-linear-gradient(90deg,
-              rgba(0,0,0,0) 0 18px,
-              rgba(0,0,0,0) 18px 24px,
-              rgba(0,0,0,.10) 24px 26px,
-              rgba(0,0,0,0) 26px 44px);
-      opacity:.15;
-      mask:
-              repeating-linear-gradient(90deg,#000 0 22px, transparent 22px 40px);
-    }
-
-    .products{
-      max-width:1200px;
-      margin:0 auto;
-      padding:0 60px;
-      position:relative;
-      z-index:4;
-    }
-
+    .products{max-width:1200px;margin:0 auto;padding:0 60px;position:relative;z-index:4}
     .section-title{
-      text-align:center;
-      font-weight:800;
-      letter-spacing:1.5px;
-      color:var(--pink);
-      margin-top:14px;
-      margin-bottom:28px;
-      font-size: 18px;
-      text-transform:uppercase;
+      text-align:center;font-weight:800;letter-spacing:1.5px;color:var(--pink);
+      margin-top:14px;margin-bottom:32px;font-size: 24px;text-transform:uppercase;
     }
 
-    .product-grid{
+    /* ✅ circle specialty (like screenshot) */
+    .circle-grid{
       display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap:34px 40px;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap:22px;
       align-items:start;
       justify-items:center;
-      padding-top:6px;
+      max-width: 1100px;
+      margin: 0 auto 38px;
     }
-
-    .product-item{width: 180px;text-align:center}
-
-    .product-circle{
-      width:140px;height:140px;
-      border-radius:50%;
-      background: radial-gradient(circle at 35% 30%, rgba(255,255,255,.85), rgba(255,255,255,.38) 55%, rgba(255,255,255,.18));
-      box-shadow: var(--soft);
-      display:grid;
-      place-items:center;
-      overflow:hidden;
-      border: 6px solid rgba(255,255,255,.72);
-    }
-
-    .product-label{
-      margin-top:10px;
-      font-weight:800;
-      font-size:12px;
-      letter-spacing:1.2px;
-      color:var(--pink);
-      text-transform:uppercase;
-    }
-
-    .view-all{
+    .circle-item{
+      text-decoration:none;
+      color:#333;
       display:flex;
-      justify-content:center;
-      margin-top:34px;
+      flex-direction:column;
+      align-items:center;
+      gap:12px;
+      transition: transform .2s ease;
     }
-    .btn-view{
-      border:0;
-      padding:12px 56px;
-      background: var(--mint);
-      color: rgba(255,255,255,.92);
-      font-weight:800;
-      letter-spacing:1px;
+    .circle-item:hover{transform: translateY(-4px)}
+    .circle-photo{
+      width:110px;height:110px;border-radius:999px;
+      background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.7), rgba(255,255,255,.25) 40%, rgba(255,255,255,.12) 70%),
+      linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.55));
+      border: 3px solid rgba(255,107,157,.35);
+      box-shadow: 0 12px 26px rgba(0,0,0,.12);
+      display:grid;place-items:center;
+      overflow:hidden;
+      position:relative;
+    }
+    .circle-photo img{
+      width:100%;height:100%;
+      object-fit:cover;
+      display:block;
+      transform: scale(1.02);
+    }
+    .circle-emoji{
+      font-size:44px;
+      filter: drop-shadow(0 6px 10px rgba(0,0,0,.10));
+    }
+    .circle-label{
+      font-weight:900;
+      font-size:12px;
+      letter-spacing:2px;
+      color: var(--pink);
       text-transform:uppercase;
-      border-radius:2px;
-      box-shadow: 0 10px 0 rgba(0,0,0,.08), 0 20px 30px rgba(0,0,0,.12);
-      cursor:pointer;
+    }
+
+    .view-all{display:flex;justify-content:center;margin-top:10px}
+    .btn-view{
+      border:0;padding:12px 56px;background: var(--mint);color: rgba(255,255,255,.92);font-weight:800;
+      letter-spacing:1px;text-transform:uppercase;border-radius:10px;
+      box-shadow: 0 10px 0 rgba(0,0,0,.08), 0 20px 30px rgba(0,0,0,.12);cursor:pointer;
       transition: transform .18s ease, background .18s ease;
     }
     .btn-view:hover{background:var(--mint2);transform:translateY(-2px)}
 
-    /* ==========================
-       TURQUOISE STRIP (KEEP)
-       ========================== */
-    .turquoise-section{
-      background: linear-gradient(180deg, var(--mint) 0%, var(--mint2) 100%);
-      height:60px;
-      position:relative;
-    }
+    /* TURQUOISE STRIP */
+    .turquoise-section{background: linear-gradient(180deg, var(--mint) 0%, var(--mint2) 100%);height:60px;position:relative}
     .decorative-text{
-      position:absolute;bottom:10px;right:80px;
-      font-family:'Tangerine',cursive;
-      font-size:48px;
-      color: rgba(255,255,255,.30);
-      transform: rotate(-5deg);
+      position:absolute;bottom:10px;right:80px;font-family:'Tangerine',cursive;font-size:48px;
+      color: rgba(255,255,255,.30);transform: rotate(-5deg);user-select:none;
+    }
+
+    /* MENU PAGE */
+    .menu-page{display:none;padding:60px 0 80px;background:#fff}
+    .menu-page.active{display:block}
+    .menu-container{max-width:1200px;margin:0 auto;padding:0 60px}
+    .menu-header{text-align:center;margin-bottom:34px}
+    .menu-header h1{font-size:48px;font-weight:800;color:var(--pink);margin-bottom:10px;letter-spacing:1px}
+    .menu-header p{font-size:16px;color:#666;max-width:650px;margin:0 auto}
+
+    /* ✅ accordion */
+    .accordion{display:grid;gap:16px;margin-top:22px}
+    .acc-item{
+      border-radius:16px;
+      overflow:hidden;
+      border:2px solid rgba(255,107,157,.14);
+      box-shadow: 0 10px 28px rgba(0,0,0,.08);
+      background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.84));
+    }
+    .acc-btn{
+      width:100%;
+      border:0;
+      background: linear-gradient(90deg, rgba(78,205,196,.12), rgba(255,107,157,.08));
+      padding:18px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      cursor:pointer;
+    }
+    .acc-left{display:flex;align-items:center;gap:14px;min-width:0}
+    .acc-thumb{
+      width:58px;height:58px;border-radius:14px;
+      background: rgba(255,255,255,.9);
+      border:2px solid rgba(78,205,196,.30);
+      display:grid;place-items:center;
+      overflow:hidden;
+      box-shadow: 0 10px 16px rgba(0,0,0,.10);
+      flex: 0 0 auto;
+    }
+    .acc-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .acc-thumb span{font-size:30px}
+    .acc-title{min-width:0}
+    .acc-title h2{
+      font-size:18px;
+      font-weight:900;
+      letter-spacing:.5px;
+      color:#333;
+      margin:0;
+      line-height:1.15;
+    }
+    .acc-title p{
+      margin-top:4px;
+      font-size:13px;
+      color:#666;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      max-width: 720px;
+    }
+    .acc-chevron{
+      font-size:20px;
+      color: var(--pink);
+      transition: transform .2s ease;
       user-select:none;
+      flex:0 0 auto;
+    }
+    .acc-item.open .acc-chevron{transform: rotate(180deg)}
+
+    .acc-panel{
+      display:none;
+      padding: 18px 18px 22px;
+      background: rgba(255,255,255,.92);
+    }
+    .acc-item.open .acc-panel{display:block}
+
+    .menu-section-block{margin-top:14px}
+    .mini-title{
+      font-size:14px;
+      letter-spacing:1.6px;
+      text-transform:uppercase;
+      color: var(--mint2);
+      font-weight:900;
+      margin: 10px 0 12px;
+    }
+    .muted{opacity:.75;font-weight:700}
+
+    .menu-items{display:grid;gap:12px}
+    .menu-item{
+      background:#f9f9f9;border-radius:12px;padding:14px 16px;
+      display:flex;justify-content:space-between;align-items:center;
+      transition:all .2s ease;border:2px solid transparent;
+      gap:16px;
+    }
+    .menu-item:hover{background:#fff;border-color:var(--pink);transform:translateX(3px);box-shadow:0 4px 12px rgba(0,0,0,.08)}
+    .item-info h4{font-size:15px;font-weight:800;color:#333;margin-bottom:2px}
+    .item-info p{font-size:12px;color:#666;line-height:1.45}
+    .item-price{font-size:16px;font-weight:900;color:var(--pink);white-space:nowrap}
+
+    .menu-note{
+      background:linear-gradient(135deg, #fff9e6 0%, #fff3d6 100%);border-left:4px solid #ffc107;
+      padding:14px 16px;border-radius:10px;margin-top:12px;font-size:13px;color:#856404;
+    }
+    /* --- Specialty cards: aligned layout --- */
+    .product-item{
+      display:flex;
+      align-items:center;
+      gap:22px;
+      text-align:left;              /* ✅ stop centering */
     }
 
-    /* ==========================
-       ANIMATIONS
-       ========================== */
-    @keyframes fadeInDown{
-      from{opacity:0;transform:translateY(-30px)}
-      to{opacity:1;transform:translateY(0)}
-    }
-    @keyframes fadeInUp{
-      from{opacity:0;transform:translateY(30px)}
-      to{opacity:1;transform:translateY(0)}
+    .product-media{
+      width:86px;
+      height:86px;
+      flex:0 0 86px;                /* ✅ consistent icon column */
+      border-radius:18px;
+      background: rgba(255,255,255,.92);
+      border: 3px solid rgba(78,205,196,.35);
+      box-shadow: 0 8px 22px rgba(0,0,0,.07);
+      display:grid;
+      place-items:center;
     }
 
-    /* ==========================
-       RESPONSIVE
-       ========================== */
+    .product-icon{
+      font-size:44px;
+      margin:0;                     /* ✅ remove old spacing */
+      display:block;
+    }
+
+    .product-content{
+      flex:1;
+      min-width:0;
+    }
+
+    .product-label{
+      margin:0 0 6px;
+      font-weight:800;
+      font-size:32px;               /* tweak if you want smaller */
+      letter-spacing:.3px;
+      color:#333;
+    }
+
+    .product-count{
+      margin:0;
+      font-size:18px;
+      color:#666;
+      font-weight:500;
+      line-height:1.4;
+    }
+
+    /* Optional: if you switch to images */
+    .product-img{
+      width:46px;
+      height:46px;
+      object-fit:contain;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeInDown{from{opacity:0;transform:translateY(-30px)} to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)}}
+
+    /* RESPONSIVE */
     @media (max-width:1024px){
       header{padding:30px 40px 20px}
       .nav-menu{gap:40px}
       .hero{padding:62px 40px 50px;gap:26px}
       .products{padding:0 40px}
+      .menu-container{padding:0 40px}
       .spark{right:40px}
+      .circle-grid{grid-template-columns: repeat(3, minmax(0, 1fr))}
     }
-
     @media (max-width:820px){
       .hero{
-        grid-template-columns: 1fr;
-        padding:56px 26px 46px;
+        grid-template-columns: 1fr 1fr;   /* ✅ keep side-by-side */
+        align-items:center;
+        gap:18px;
+        padding:42px 18px 36px;
       }
-      .cupcake-card{margin-left:0;justify-content:center}
-      .spark{right:18px;top:40px;transform:scale(.9)}
-      .products{padding:0 26px}
-      .product-grid{grid-template-columns: repeat(2, 1fr)}
-      .nav-menu{
-        flex-wrap:wrap;gap:20px;justify-content:center;
-      }
-      .logo{font-size:56px}
-      .decorative-text{font-size:36px;right:40px}
 
-      /* keeps coffee from being huge on mobile */
-      .coffee-image{width: min(280px, 92vw)}
+      .hero-left{
+        min-width:0;
+      }
+
+      .cupcake-card{
+        justify-content:flex-end;
+        margin-left:0;
+      }
+
+      .coffee-image{
+        width: min(220px, 42vw);          /* ✅ smaller image */
+      }
+
+      .hero-title{
+        font-size: clamp(1.7rem, 5vw, 2.6rem);  /* ✅ prevent giant text */
+        line-height: 1.05;
+      }
+
+      .btn-order{
+        padding:12px 26px;
+        font-size:16px;
+      }
+    }
+
+    @media (max-width:520px){
+      .circle-grid{grid-template-columns: repeat(2, minmax(0, 1fr))}
+      .circle-photo{width:100px;height:100px}
+      .acc-title p{display:none}
     }
   </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <div class="header-wrapper gingham">
   <div class="top-wave">
     <svg viewBox="0 0 1200 25" preserveAspectRatio="none">
@@ -411,7 +429,6 @@
             <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
           </svg>
         </button>
-
         <button class="icon-btn" aria-label="Search">
           <svg class="search-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
@@ -422,10 +439,10 @@
 
     <nav>
       <ul class="nav-menu" id="navMenu">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#order">Order</a></li>
-        <li><a href="#about">About Us</a></li>
+        <li><a href="#home" class="active nav-link">Home</a></li>
+        <li><a href="#menu" class="nav-link">Menu</a></li>
+        <li><a href="#order" class="nav-link">Order</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
       </ul>
     </nav>
   </header>
@@ -437,208 +454,377 @@
   </div>
 </div>
 
-<!--<section id="home" class="hero-wrap">-->
-<!--  <div class="scallop top"></div>-->
-<!--  <div class="scallop bottom"></div>-->
+<!-- HOME PAGE -->
+<div id="homePage">
+  <section id="home" class="hero-wrap">
+<!--    <div class="scallop top"></div>-->
+<!--    <div class="scallop bottom"></div>-->
 
-  <svg class="spark" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <defs>
-      <radialGradient id="g" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
-        <stop offset="35%" stop-color="#ffffff" stop-opacity=".95"/>
-        <stop offset="70%" stop-color="#ffffff" stop-opacity=".20"/>
-        <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-      </radialGradient>
-    </defs>
-    <circle cx="110" cy="70" r="58" fill="url(#g)"/>
-    <g stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".9">
-      <path d="M110 14 L110 38"/>
-      <path d="M110 102 L110 126"/>
-      <path d="M54 70 L78 70"/>
-      <path d="M142 70 L166 70"/>
-      <path d="M72 32 L88 48"/>
-      <path d="M132 92 L148 108"/>
-      <path d="M148 32 L132 48"/>
-      <path d="M88 92 L72 108"/>
-    </g>
-    <g fill="#fff" opacity=".85">
-      <circle cx="60" cy="105" r="3"/>
-      <circle cx="160" cy="40" r="2.5"/>
-      <circle cx="150" cy="120" r="2.2"/>
-      <circle cx="85" cy="18" r="2"/>
-    </g>
-  </svg>
+<!--    <svg class="spark" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">-->
+      <defs>
+        <radialGradient id="g" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+          <stop offset="35%" stop-color="#ffffff" stop-opacity=".95"/>
+          <stop offset="70%" stop-color="#ffffff" stop-opacity=".20"/>
+          <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <circle cx="110" cy="70" r="58" fill="url(#g)"/>
+      <g stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".9">
+        <path d="M110 14 L110 38"/>
+        <path d="M110 102 L110 126"/>
+        <path d="M54 70 L78 70"/>
+        <path d="M142 70 L166 70"/>
+        <path d="M72 32 L88 48"/>
+        <path d="M132 92 L148 108"/>
+        <path d="M148 32 L132 48"/>
+        <path d="M88 92 L72 108"/>
+      </g>
+      <g fill="#fff" opacity=".85">
+        <circle cx="60" cy="105" r="3"/>
+        <circle cx="160" cy="40" r="2.5"/>
+        <circle cx="150" cy="120" r="2.2"/>
+        <circle cx="85" cy="18" r="2"/>
+      </g>
+    </svg>
 
-  <div class="hero">
-    <div class="hero-left">
-      <div class="brand-script">Cafe Amor</div>
+    <div class="hero">
+      <div class="hero-left">
+<!--        <div class="brand-script">Cafe Amor</div>-->
+        <h1 class="hero-title">
+          Choose <span class="pink">Tasty</span>,<br/>
+          Choose <span class="pink">Sweety</span>
+        </h1>
+        <div class="hero-cta">
+          <button class="btn-order" onclick="showMenu()">Order Now</button>
+        </div>
+      </div>
 
-      <h1 class="hero-title">
-        Choose <span class="pink">Tasty</span>,<br/>
-        Choose <span class="pink">Sweety</span>
-      </h1>
-
-      <div class="hero-cta">
-        <button class="btn-order" onclick="document.querySelector('#order').scrollIntoView({behavior:'smooth'})">
-          Order Now
-        </button>
+      <div class="cupcake-card">
+        <!-- ✅ removed hero ribbon (kept commented out) -->
+        <!--
+        <svg class="ribbon" viewBox="0 0 520 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M10 72 C80 10, 140 120, 210 62 C280 10, 360 120, 510 32" fill="none" stroke="rgba(255,107,157,.75)" stroke-width="18" stroke-linecap="round"/>
+        </svg>
+        -->
+        <img src="coffee.png" alt="Cafe Amor Coffee" class="coffee-image">
       </div>
     </div>
+  </section>
 
-    <!-- UPDATED: uses your coffee.png instead of cupcake SVG -->
-    <div class="cupcake-card">
-      <svg class="ribbon" viewBox="0 0 520 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M10 72 C80 10, 140 120, 210 62 C280 10, 360 120, 510 32" fill="none" stroke="rgba(255,107,157,.75)" stroke-width="18" stroke-linecap="round"/>
-      </svg>
+  <!-- OUR SPECIALTY (circle style) -->
+  <section class="products-wrap gingham" id="specialty">
+    <div class="film-strip"></div>
+    <div class="scallop bottom"></div>
 
-      <!-- Put coffee.png in SAME folder as this HTML OR change the path (assets/images/coffee.png) -->
-      <img src="coffee.png" alt="Cafe Amor Coffee" class="coffee-image">
+    <div class="products">
+      <div class="section-title">OUR SPECIALTY</div>
+
+      <div class="circle-grid">
+        <a class="circle-item" href="#" onclick="showMenu();openCategory('cat-breakfast');return false;">
+          <div class="circle-photo">
+             <img src="panini.png" alt="Breakfast">
+            <span class="circle-emoji"></span>
+          </div>
+          <div class="circle-label">BREAKFAST</div>
+        </a>
+
+        <a class="circle-item" href="#" onclick="showMenu();openCategory('cat-sweets');return false;">
+          <div class="circle-photo">
+             <img src="crepe.png" alt="Sweet Treats">
+            <span class="circle-emoji"></span>
+          </div>
+          <div class="circle-label">SWEET TREATS</div>
+        </a>
+
+        <a class="circle-item" href="#" onclick="showMenu();openCategory('cat-coffee');return false;">
+          <div class="circle-photo">
+             <img src="coffeehot.png" alt="Coffee">
+            <span class="circle-emoji"></span>
+          </div>
+          <div class="circle-label">COFFEE</div>
+        </a>
+
+        <a class="circle-item" href="#" onclick="showMenu();openCategory('cat-cold');return false;">
+          <div class="circle-photo">
+             <img src="smoothie.png" alt="Cold Drinks">
+            <span class="circle-emoji"></span>
+          </div>
+          <div class="circle-label">COLD DRINKS</div>
+        </a>
+
+        <a class="circle-item" href="#" onclick="showMenu();openCategory('cat-icecream');return false;">
+          <div class="circle-photo">
+             <img src="icecream.png" alt="Ice Cream">
+            <span class="circle-emoji"></span>
+          </div>
+          <div class="circle-label">ICE CREAM</div>
+        </a>
+
+        <a class="circle-item" href="#" onclick="showMenu();openCategory('cat-refreshers');return false;">
+          <div class="circle-photo">
+             <img src="horchata.png" alt="Refreshers">
+            <span class="circle-emoji"></span>
+          </div>
+          <div class="circle-label">REFRESHERS</div>
+        </a>
+      </div>
+
+      <div class="view-all">
+        <button class="btn-view" onclick="showMenu()">VIEW FULL MENU</button>
+      </div>
+
+      <!-- ✅ OLD CARD GRID (commented out) -->
+      <!--
+      <div class="product-grid">
+        ...
+      </div>
+      -->
     </div>
+  </section>
+
+  <div class="turquoise-section" id="order">
+    <div class="decorative-text">Basit</div>
   </div>
-</section>
-
-<section class="products-wrap gingham" id="menu" aria-label="Our Products">
-  <div class="film-strip"></div>
-  <div class="scallop bottom"></div>
-
-  <div class="products">
-    <div class="section-title">OUR PRODUCTS</div>
-
-    <div class="product-grid">
-      <div class="product-item">
-        <div class="product-circle">
-          <svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="18" y="48" width="60" height="26" rx="4" fill="#ff6b9d"/>
-            <rect x="26" y="36" width="44" height="14" rx="3" fill="#ffd1e3"/>
-            <circle cx="34" cy="33" r="4" fill="#ff6b9d"/>
-            <circle cx="48" cy="33" r="4" fill="#ff6b9d"/>
-            <circle cx="62" cy="33" r="4" fill="#ff6b9d"/>
-            <rect x="30" y="26" width="2" height="10" fill="#ffd1e3"/>
-            <rect x="46" y="26" width="2" height="10" fill="#ffd1e3"/>
-            <rect x="62" y="26" width="2" height="10" fill="#ffd1e3"/>
-          </svg>
-        </div>
-        <div class="product-label">CAKES</div>
-      </div>
-
-      <div class="product-item">
-        <div class="product-circle">
-          <svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M26 70 C26 58, 32 44, 48 44 C64 44, 70 58, 70 70 Z" fill="#ff6b9d"/>
-            <path d="M30 46 C30 32, 66 32, 66 46 C66 58, 30 58, 30 46Z" fill="#ffd1e3"/>
-            <circle cx="40" cy="40" r="4" fill="#ff6b9d"/>
-            <circle cx="50" cy="38" r="4" fill="#ff6b9d"/>
-            <circle cx="60" cy="40" r="4" fill="#ff6b9d"/>
-          </svg>
-        </div>
-        <div class="product-label">CUP CAKES</div>
-      </div>
-
-      <div class="product-item">
-        <div class="product-circle">
-          <svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="24" y="40" width="48" height="38" rx="6" fill="#7a4a2c"/>
-            <rect x="24" y="40" width="48" height="10" rx="6" fill="#5b311a" opacity=".35"/>
-            <circle cx="36" cy="56" r="4" fill="#3b1f12" opacity=".55"/>
-            <circle cx="52" cy="62" r="4" fill="#3b1f12" opacity=".55"/>
-            <circle cx="60" cy="54" r="4" fill="#3b1f12" opacity=".55"/>
-          </svg>
-        </div>
-        <div class="product-label">BROWNIES</div>
-      </div>
-
-      <div class="product-item">
-        <div class="product-circle">
-          <svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="48" cy="52" r="26" fill="#d9a26a"/>
-            <circle cx="36" cy="46" r="4" fill="#7a4a2c"/>
-            <circle cx="52" cy="42" r="4" fill="#7a4a2c"/>
-            <circle cx="58" cy="58" r="4" fill="#7a4a2c"/>
-            <circle cx="42" cy="62" r="4" fill="#7a4a2c"/>
-          </svg>
-        </div>
-        <div class="product-label">COOKIES</div>
-      </div>
-
-<!--      <div class="product-item">-->
-<!--        <div class="product-circle">-->
-<!--          <svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">-->
-<!--            <path d="M22 60 C22 44, 34 32, 50 32 C66 32, 74 44, 74 56 C74 70, 58 78, 44 76 C34 74, 22 72, 22 60Z" fill="#b77a3a"/>-->
-<!--            <path d="M30 58 C30 50, 38 44, 46 44" stroke="#8a5222" stroke-width="4" stroke-linecap="round" opacity=".6"/>-->
-<!--          </svg>-->
-<!--        </div>-->
-<!--        <div class="product-label">BREADS</div>-->
-<!--      </div>-->
-
-<!--      <div class="product-item">-->
-<!--        <div class="product-circle">-->
-<!--          <svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">-->
-<!--            <circle cx="48" cy="52" r="24" fill="#f0c070"/>-->
-<!--            <circle cx="38" cy="48" r="4" fill="#d9a26a"/>-->
-<!--            <circle cx="52" cy="56" r="4" fill="#d9a26a"/>-->
-<!--            <circle cx="58" cy="46" r="4" fill="#d9a26a"/>-->
-<!--            <path d="M22 60 C30 68, 66 68, 74 60" stroke="#ff6b9d" stroke-width="6" stroke-linecap="round" opacity=".9"/>-->
-<!--          </svg>-->
-<!--        </div>-->
-<!--        <div class="product-label">BREAKFAST</div>-->
-<!--      </div>-->
-
-<!--      <div class="product-item">-->
-<!--        <div class="product-circle">-->
-<!--          <svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">-->
-<!--            <rect x="28" y="34" width="40" height="44" rx="10" fill="#b9f0ea"/>-->
-<!--            <rect x="28" y="34" width="40" height="14" rx="10" fill="#7fe2d9" opacity=".7"/>-->
-<!--            <circle cx="44" cy="54" r="8" fill="#ffe16a"/>-->
-<!--            <path d="M70 40 C78 44, 78 68, 70 72" fill="none" stroke="#7fe2d9" stroke-width="6" stroke-linecap="round"/>-->
-<!--          </svg>-->
-<!--        </div>-->
-<!--        <div class="product-label">DRINKS</div>-->
-<!--      </div>-->
-
-<!--      <div class="product-item">-->
-<!--        <div class="product-circle">-->
-<!--          <svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">-->
-<!--            <path d="M26 60 C26 44, 40 34, 56 34 C66 34, 76 40, 76 52 C76 70, 56 76, 44 74 C34 72, 26 70, 26 60Z" fill="#e9c37a"/>-->
-<!--            <path d="M34 54 C42 48, 58 48, 68 54" stroke="#c99b58" stroke-width="6" stroke-linecap="round" opacity=".7"/>-->
-<!--          </svg>-->
-<!--        </div>-->
-<!--        <div class="product-label">CROISSANTS</div>-->
-<!--      </div>-->
-    </div>
-<!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
-    <div class="view-all">
-      <button class="btn-view" onclick="document.querySelector('#menu').scrollIntoView({behavior:'smooth'})">
-        VIEW ALL
-      </button>
-    </div>
-  </div>
-</section>
-
-<div class="turquoise-section" id="order">
-  <div class="decorative-text">Basit</div>
 </div>
 
-<!--<section id="about" style="padding:70px 26px;max-width:1200px;margin:0 auto;">-->
-<!--  <h2 style="color:var(&#45;&#45;pink);letter-spacing:1.2px;text-transform:uppercase;font-size:18px;margin-bottom:14px;">About Us</h2>-->
-<!--  <p style="max-width:820px;color:#666;line-height:1.8;">-->
-<!--    (Placeholder) Replace this with Cafe Amor’s story, hours, and location. We can also add a Google Maps embed + “Order Online” buttons here.-->
-<!--  </p>-->
-<!--</section>-->
+<!-- MENU PAGE (accordion / collapsible) -->
+<div class="menu-page" id="menuPage">
+  <div class="menu-container">
+    <div class="menu-header">
+      <h1>Our Menu</h1>
+      <p>Tap a category to expand. Add category images anytime.</p>
+    </div>
+
+    <div class="accordion">
+
+      <section class="acc-item" id="cat-breakfast">
+        <button class="acc-btn" type="button">
+          <div class="acc-left">
+            <div class="acc-thumb">
+              <!-- <img src="bagel.jpg" alt="Breakfast"> -->
+              <span>🥯</span>
+            </div>
+            <div class="acc-title">
+              <h2>Breakfast & Savory</h2>
+              <p>Bagels, Croissants, Panini, Salads, Savory Crepes, Toast, Oatmeal</p>
+            </div>
+          </div>
+          <span class="acc-chevron">▾</span>
+        </button>
+
+        <div class="acc-panel">
+          <div class="menu-section-block">
+            <h3 class="mini-title">Breakfast Bagels</h3>
+            <div class="menu-items">
+              <div class="menu-item"><div class="item-info"><h4>Cream Cheese Bagel</h4></div><div class="item-price">$5</div></div>
+              <div class="menu-item"><div class="item-info"><h4>Bacon, Egg & Cheese</h4></div><div class="item-price">$9</div></div>
+              <div class="menu-item"><div class="item-info"><h4>Bacon & Sausage</h4></div><div class="item-price">$9.50</div></div>
+              <div class="menu-item"><div class="item-info"><h4>Cheesy Jalapeño</h4></div><div class="item-price">$9</div></div>
+              <div class="menu-item"><div class="item-info"><h4>Smoked Salmon</h4></div><div class="item-price">$12</div></div>
+              <div class="menu-item"><div class="item-info"><h4>Turkey Avocado</h4></div><div class="item-price">$9.50</div></div>
+              <div class="menu-item"><div class="item-info"><h4>Vegetarian Bagel</h4></div><div class="item-price">$8</div></div>
+            </div>
+          </div>
+
+          <div class="menu-section-block">
+            <h3 class="mini-title">Savory Crepes</h3>
+            <div class="menu-items">
+              <div class="menu-item"><div class="item-info"><h4>Spinach Ricotta</h4></div><div class="item-price">$12</div></div>
+              <div class="menu-item"><div class="item-info"><h4>Ham & Cheese</h4></div><div class="item-price">$10</div></div>
+              <div class="menu-item"><div class="item-info"><h4>Smoked Salmon</h4></div><div class="item-price">$11</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="acc-item" id="cat-sweets">
+        <button class="acc-btn" type="button">
+          <div class="acc-left">
+            <div class="acc-thumb"><span>🥞</span></div>
+            <div class="acc-title">
+              <h2>Sweet Treats</h2>
+              <p>Sweet crepes, mini pancakes, desserts</p>
+            </div>
+          </div>
+          <span class="acc-chevron">▾</span>
+        </button>
+
+        <div class="acc-panel">
+          <div class="menu-section-block">
+            <h3 class="mini-title">Sweet Crepes ($12)</h3>
+            <div class="menu-items">
+              <div class="menu-item"><div class="item-info"><h4>Nutella</h4></div><div class="item-price">$12</div></div>
+              <div class="menu-item"><div class="item-info"><h4>Birthday Cake</h4></div><div class="item-price">$12</div></div>
+              <div class="menu-item"><div class="item-info"><h4>Cookies-n-Cream</h4></div><div class="item-price">$12</div></div>
+              <div class="menu-item"><div class="item-info"><h4>Lemon Cream Cheese</h4></div><div class="item-price">$12</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="acc-item" id="cat-coffee">
+        <button class="acc-btn" type="button">
+          <div class="acc-left">
+            <div class="acc-thumb"><span>☕</span></div>
+            <div class="acc-title">
+              <h2>Coffee & Espresso</h2>
+              <p>Hot espresso drinks + iced coffee menu</p>
+            </div>
+          </div>
+          <span class="acc-chevron">▾</span>
+        </button>
+
+        <div class="acc-panel">
+          <div class="menu-section-block">
+            <h3 class="mini-title">Hot Espresso Drinks</h3>
+            <div class="menu-items">
+              <div class="menu-item"><div class="item-info"><h4>Espresso Shot</h4></div><div class="item-price">$3</div></div>
+              <div class="menu-item"><div class="item-info"><h4>Americano</h4></div><div class="item-price">$4</div></div>
+              <div class="menu-item"><div class="item-info"><h4>Latte</h4></div><div class="item-price">$6.75</div></div>
+              <div class="menu-item"><div class="item-info"><h4>Mocha</h4></div><div class="item-price">$6.75</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="acc-item" id="cat-cold">
+        <button class="acc-btn" type="button">
+          <div class="acc-left">
+            <div class="acc-thumb"><span>🥤</span></div>
+            <div class="acc-title">
+              <h2>Cold Drinks & Shakes</h2>
+              <p>Milkshakes, smoothies, matcha, frappuccinos</p>
+            </div>
+          </div>
+          <span class="acc-chevron">▾</span>
+        </button>
+
+        <div class="acc-panel">
+          <div class="menu-section-block">
+            <h3 class="mini-title">Smoothies ($8.50)</h3>
+            <div class="menu-items">
+              <div class="menu-item"><div class="item-info"><h4>Mango Pineapple</h4></div><div class="item-price">$8.50</div></div>
+              <div class="menu-item"><div class="item-info"><h4>Mixed Berries</h4></div><div class="item-price">$8.50</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="acc-item" id="cat-icecream">
+        <button class="acc-btn" type="button">
+          <div class="acc-left">
+            <div class="acc-thumb"><span>🍦</span></div>
+            <div class="acc-title">
+              <h2>Ice Cream & Sundaes</h2>
+              <p>Scoops, cones, mangonada, sundaes</p>
+            </div>
+          </div>
+          <span class="acc-chevron">▾</span>
+        </button>
+
+        <div class="acc-panel">
+          <div class="menu-section-block">
+            <h3 class="mini-title">Ice Cream</h3>
+            <div class="menu-items">
+              <div class="menu-item"><div class="item-info"><h4>1 Scoop</h4></div><div class="item-price">$4.50</div></div>
+              <div class="menu-item"><div class="item-info"><h4>2 Scoops</h4></div><div class="item-price">$6.50</div></div>
+              <div class="menu-item"><div class="item-info"><h4>3 Scoops</h4></div><div class="item-price">$9.50</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="acc-item" id="cat-refreshers">
+        <button class="acc-btn" type="button">
+          <div class="acc-left">
+            <div class="acc-thumb"><span>🍉</span></div>
+            <div class="acc-title">
+              <h2>Refreshers</h2>
+              <p>Fresh, fruity, and chill</p>
+            </div>
+          </div>
+          <span class="acc-chevron">▾</span>
+        </button>
+
+        <div class="acc-panel">
+          <div class="menu-section-block">
+            <h3 class="mini-title">Refreshers ($5)</h3>
+            <div class="menu-items">
+              <div class="menu-item"><div class="item-info"><h4>Watermelon Chia</h4></div><div class="item-price">$5</div></div>
+              <div class="menu-item"><div class="item-info"><h4>Mango Tajín Lemonade</h4></div><div class="item-price">$5</div></div>
+              <div class="menu-item"><div class="item-info"><h4>Cucumber Chia</h4></div><div class="item-price">$5</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <div style="text-align:center;margin-top:60px">
+      <button class="btn-order" onclick="showHome()">← Back to Home</button>
+    </div>
+  </div>
+</div>
 
 <script>
-  // Smooth active-state on nav click
-  const navLinks = document.querySelectorAll('#navMenu a');
-  navLinks.forEach(a => {
-    a.addEventListener('click', (e) => {
-      const id = a.getAttribute('href');
-      if (id && id.startsWith('#')) {
-        e.preventDefault();
-        const el = document.querySelector(id);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
+  function showMenu() {
+    document.getElementById('homePage').style.display = 'none';
+    document.getElementById('menuPage').classList.add('active');
+    window.scrollTo(0, 0);
 
-        navLinks.forEach(x => x.classList.remove('active'));
-        a.classList.add('active');
-        history.replaceState(null, '', id);
+    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+    document.querySelector('a[href="#menu"]').classList.add('active');
+  }
+
+  function showHome() {
+    document.getElementById('homePage').style.display = 'block';
+    document.getElementById('menuPage').classList.remove('active');
+    window.scrollTo(0, 0);
+
+    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+    document.querySelector('a[href="#home"]').classList.add('active');
+  }
+
+  // accordion behavior
+  document.querySelectorAll('.acc-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const item = btn.closest('.acc-item');
+      const isOpen = item.classList.contains('open');
+
+      // close others (cleaner UX)
+      document.querySelectorAll('.acc-item').forEach(i => i.classList.remove('open'));
+
+      if(!isOpen) item.classList.add('open');
+    });
+  });
+
+  // open a specific category from specialty circles
+  function openCategory(id){
+    const item = document.getElementById(id);
+    if(!item) return;
+
+    document.querySelectorAll('.acc-item').forEach(i => i.classList.remove('open'));
+    item.classList.add('open');
+    setTimeout(()=> item.scrollIntoView({behavior:'smooth', block:'start'}), 120);
+  }
+
+  // Nav click handlers
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const href = link.getAttribute('href');
+
+      if (href === '#menu') {
+        showMenu();
+      } else if (href === '#home') {
+        showHome();
+      } else {
+        showHome();
+        setTimeout(() => {
+          const target = document.querySelector(href);
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
       }
     });
   });
